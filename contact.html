@@ -8,42 +8,28 @@
 </head>
 
 <body>
-    <div id="contact-body"
-        class="text-primary flex max-sm:flex-col justify-between items-end max-sm:items-start px-8 sm:px-10 md:px-10 lg:px-20">
-        <div class="flex flex-col gap-10 max-sm:gap-5 text-lg md:text-md lg:text-3xl">
-            <div>
-                <h1 class="text-2xl font-medium">Imprint</h1>
-                <h2 class="font-bold">Agentur Baumeister</h2>
-                <div class="flex flex-col">
-                    <span>Katrein Baumeister</span>
-                    <span>Böckhstraße 13</span>
-                    <span>10967 Berlin</span>
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <span>+49 (0)30 - 490 827 87</span>
-                <span>hallo@agentur-baumeister.com</span>
-            </div>
-            <div class="flex-col">
-                <h2 class="font-bold">UST-IDNR.</h2>
-                <span>DE 274 486 923</span>
-            </div>
-            <div class="flex-col">
-                <h2 class="font-bold">REGISTERED OFFICE</h2>
-                <span>Berlin, Deutschland</span>
-            </div>
-        </div>
-        <div class="w-full md:w-1/2 lg:w-[30%] text-right max-sm:text-left max-sm:mt-10 flex flex-col gap-5 md:gap-10">
-            <h1 class="text-2xl font-semibold">DISCLAIMER</h1>
-            <p class="text-md md:text-xl">Despite all due care, no liability can be accepted for the accuracy,
-                completeness
-                and up to-dateness of the information
-                provided. The same applies to third-party websites to which www.agentur-baumeister.com refers by means
-                of
-                hyperlinks.
-                Katrein Baumeister, Agentur Baumeister accepts no liability for the content of these websites.</p>
-        </div>
-    </div>
+
+    <script>
+        const loadComponents = (id, url) => {
+            fetch(url)
+                .then((response) => response.text())
+                .then((html) => {
+                    document.getElementById(id).innerHTML = html;
+                });
+
+        }
+
+
+        window.onload = () => {
+            loadComponents('imprint', 'src/imprint.html');
+            //    setTimeout(() => {
+            //        contactForm();
+            // }, 100);
+        }
+    </script>
+
+    <div id="imprint"></div>
 </body>
+<script src="./src/contact.js" defer> </script>
 
 </html>
