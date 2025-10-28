@@ -11,20 +11,17 @@
 
     <script>
         const loadComponents = (id, url) => {
-            fetch(url)
+            return fetch(url)
                 .then((response) => response.text())
                 .then((html) => {
                     document.getElementById(id).innerHTML = html;
                 });
-
         }
 
 
         window.onload = () => {
-            loadComponents('imprint', 'src/imprint.html');
-            //    setTimeout(() => {
-            //        contactForm();
-            // }, 100);
+            loadComponents('imprint', 'sections/imprint.html')
+                .then(() => populateContactData());
         }
     </script>
 

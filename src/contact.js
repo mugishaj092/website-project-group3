@@ -51,8 +51,8 @@ function populateContactData() {
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <span>${contactInfo.contact.phoneNumber}</span>
-                    <span>${contactInfo.contact.email}</span>
+                    <a href="tel:${contactInfo.contact.phoneNumber}">${contactInfo.contact.phoneNumber}</a>
+                    <a href="mailto:mugishajoseph092@gmail.com" onclick="window.open(this.href)">${contactInfo.contact.email}</a>
                 </div>
                 <div class="flex-col">
                     <h2 class="font-bold">${contactInfo.secondAddress.name}</h2>
@@ -71,8 +71,3 @@ function populateContactData() {
         console.log('Contact data populated from contactInfo');
     }
 }
-
-
-setTimeout(() => {
-    populateContactData();
-}, 300);
