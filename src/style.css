@@ -2,8 +2,7 @@
 
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Outfit", sans-serif;
+
 @theme{
     --default-font-family: 'Outfit';
 }
