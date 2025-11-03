@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="/src/style.css" rel="stylesheet"> -->
-   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/dist/output.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link href="/src/style.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
 
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+          if(id === "header"){
+            menuBar();
+          }
+        });
+    };
 
-<script>
-  const loadComponents = (id, url) => {
-    fetch(url)
-      .then((response) => response.text())
-      .then((html) => {
-        document.getElementById(id).innerHTML = html;
+    window.onload = () => {
+      loadComponents("header", "sections/header.html");
+      loadComponents("hero", "sections/hero.html");
+      loadComponents("contact", "sections/contact.html");
+      loadComponents("footer", "sections/footer.html");
+    };
+
+    // Some JavaScript code for header section
+
+    const menuBar = () => {
+      const menuToggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("menu");
+      const hamburger = document.getElementById("hamburger");
+      const closeIcon = document.getElementById("closeIcon");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        hamburger.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
       });
-  }
 
+      console.log("Hello Umubyeyi");
+    };
+  </script>
 
-  window.onload = () => {
-    loadComponents('header', 'sections/header.html');
-    loadComponents('hero', 'sections/hero.html');
-    loadComponents('contact', 'sections/contact.html');
-    loadComponents('footer', 'sections/footer.html');
-  }
-</script>
-
-<body>
-  <div id="header"></div>
-  <div id="hero"></div>
-  <div id="contact"></div>
-  <div id="footer"></div>
-</body>
+  <body>
+    <div id="header"></div>
+    <div id="hero"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
+  </body>
 </html>
