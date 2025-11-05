@@ -16,6 +16,7 @@
       .then((response) => response.text())
       .then((html) => {
         document.getElementById(id).innerHTML = html;
+        
       });
   }
 
@@ -26,6 +27,19 @@
     loadComponents('contact', 'sections/contact.html');
     loadComponents('footer', 'sections/footer.html');
   }
+
+  const menuBar = () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("menu");
+  const hamburger = document.getElementById("hamburger");
+  const closeIcon = document.getElementById("closeIcon");
+
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    hamburger.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+    };
 </script>
 
 <body>
