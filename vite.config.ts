@@ -9,6 +9,8 @@ export default defineConfig({
       input: {
         main: 'index.html',
         contact: 'contact.html',
+        data: 'data-privacy.html',
+
       }
     }
   }
