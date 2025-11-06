@@ -20,6 +20,9 @@
         if(id === "header"){
             menuBar();
           }
+        if(id === 'hero'){
+            moveShape();
+        }  
       });
   }
 
@@ -42,7 +45,15 @@
     hamburger.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
   });
-    };
+  };
+
+  const moveShape = () => {
+    const shapes = document.getElementById("shapes")
+    const menuToggle2 = document.getElementById("menuToggle");
+    menuToggle2.addEventListener('click', () => {
+      shapes.classList.toggle("mt-[250px]");
+    })
+  }
 </script>
 
 <body>
