@@ -11,31 +11,55 @@
       rel="stylesheet"
     />
   </head>
+<script>
+  const loadComponents = (id, url) => {
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById(id).innerHTML = html;
+        if(id === "header"){
+            menuBar();
+          }
+        if(id === 'hero'){
+            moveShape();
+        }  
+      });
+  }
 
-  <script>
-    const loadComponents = (id, url) => {
-      fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById(id).innerHTML = html;
-        });
-    };
 
-    window.onload = () => {
-      loadComponents("header", "sections/header.html");
-      loadComponents("hero", "sections/hero.html");
-      loadComponents("contact", "sections/contact.html");
-      loadComponents("footer", "sections/footer.html");
-      loadComponents("references", "sections/references.html");
-    };
-  </script>
+  window.onload = () => {
+    loadComponents('header', 'sections/header.html');
+    loadComponents('hero', 'sections/hero.html');
+    loadComponents('contact', 'sections/contact.html');
+    loadComponents('footer', 'sections/footer.html');
+  }
 
-  <body>
-    <div id="header" class="text-yellow-800"></div>
-    <div id="hero"></div>
-    <div id="contact"></div>
-    <div id="footer"></div>
-    <div id="references"></div>
-  </body>
-  <script src="/js/references.js"></script>
+  const menuBar = () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("menu");
+  const hamburger = document.getElementById("hamburger");
+  const closeIcon = document.getElementById("closeIcon");
+
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    hamburger.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+  };
+
+  const moveShape = () => {
+    const shapes = document.getElementById("shapes")
+    const menuToggle2 = document.getElementById("menuToggle");
+    menuToggle2.addEventListener('click', () => {
+      shapes.classList.toggle("mt-[250px]");
+    })
+  }
+</script>
+
+<body>
+  <div id="header"></div>
+  <div id="hero"></div>
+  <div id="contact"></div>
+  <div id="footer"></div>
+</body>
 </html>
