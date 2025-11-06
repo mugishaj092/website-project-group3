@@ -3,5 +3,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Outfit", sans-serif;
+    --color-primary: #00672E;
+    --default-font-family: 'Outfit';
 }
