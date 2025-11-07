@@ -20,12 +20,15 @@
 
 
         window.onload = () => {
+            loadComponents('header', './sections/header.html')
             loadComponents('data-privacy', './sections/data-privacy.html')
+            loadComponents('footer', './sections/footer.html')
                 .then(() => populateContactData());
         }
     </script>
-
+    <div id="header"></div>
     <div id="data-privacy"></div>
+    <div id="footer"></div>
 </body>
 
 
