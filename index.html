@@ -7,30 +7,13 @@
 </head>
 
 
-<script>
-  const loadComponents = (id, url) => {
-    fetch(url)
-      .then((response) => response.text())
-      .then((html) => {
-        document.getElementById(id).innerHTML = html;
-      });
-  }
-
-
-  window.onload = () => {
-    loadComponents('header', 'sections/header.html');
-    loadComponents('hero', 'sections/hero.html');
-    loadComponents('contact', 'sections/contact.html');
-    loadComponents('footer', 'sections/footer.html');
-    loadComponents('about', 'sections/about.html')
-  }
-</script>
+<script src="/src/main.js"></script>
 
 <body class="">
-  <div id="header"></div>
-  <div id="hero"></div>
+  <div id="header" class="hidden"></div>
+  <div id="hero "></div>
   <div id="contact"></div>
-  <div id="footer"></div>
   <div id="about"></div>
+  <div id="footer-index"></div>
 </body>
 </html>
