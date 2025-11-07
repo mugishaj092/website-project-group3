@@ -20,12 +20,17 @@
 
 
         window.onload = () => {
+            loadComponents('header', './sections/header.html')
             loadComponents('imprint', './sections/imprint.html')
+            loadComponents('footer', './sections/footer.html')
                 .then(() => populateContactData());
         }
     </script>
 
+    
+    <div id="header"></div>
     <div id="imprint"></div>
+    <div id="footer"></div>
 </body>
 <script  src="./js/contact.js"></script>
 
