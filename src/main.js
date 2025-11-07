@@ -43,4 +43,6 @@ window.addEventListener("DOMContentLoaded", () => {
   loadComponent("hero", "sections/hero.html");
   loadComponent("about", "sections/about.html");
   loadComponent("contact", "sections/contact.html");
+    loadComponent("yellowsec", "sections/yellowsec.html");
+    loadComponent('references', 'sections/references.html');
 });
