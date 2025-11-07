@@ -1,18 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/src/style.css" rel="stylesheet">
-</head>
-
-
-<script src="/src/main.js"></script>
-
-<body class="">
-  <div id="header" class="hidden"></div>
-  <div id="hero "></div>
-  <div id="contact"></div>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,31 +11,8 @@
       rel="stylesheet"
     />
   </head>
+<script src="./src/main.js"></script>
 <script>
-  const loadComponents = (id, url) => {
-    fetch(url)
-      .then((response) => response.text())
-      .then((html) => {
-        document.getElementById(id).innerHTML = html;
-        if(id === "header"){
-            menuBar();
-          }
-        if(id === 'hero'){
-            moveShape();
-        }  
-      });
-  }
-
-
-  window.onload = () => {
-    loadComponents('header', 'sections/header.html');
-    loadComponents('hero', 'sections/hero.html');
-    loadComponents('contact', 'sections/contact.html');
-    loadComponents('footer', 'sections/footer.html');
-    loadComponents('about', 'sections/about.html')
-    loadComponents('yellowsec', 'sections/yellowsec.html');
-  }
-
   const menuBar = () => {
   const menuToggle = document.getElementById("menuToggle");
   const menu = document.getElementById("menu");
@@ -74,9 +38,8 @@
 <body class="">
   <div id="header"></div>
   <div id="hero"></div>
-  <div id="yellowsec"></div>
-  <div id="footer"></div>
   <div id="about"></div>
-  <div id="footer-index"></div>
+  <div id="yellowsec" class="hidden md:block lg:hidden"></div>
+  <div id="footer" class="hidden md:block lg:hidden"></div>
 </body>
 </html>

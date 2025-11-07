@@ -12,15 +12,21 @@
         their unmistakable identity and making them visible
         in the long term.</p>
     </div>
-    <div class=" flex justify-center sticky top-0">
+    <div class=" flex justify-center sticky top-0 z-20">
         <img src="src/images/yellow.png" alt="yellow shape" class="w-[196px] h-[99px] lg:w-[208px] lg:h-[134px]">
     </div>
-    <div id="footer"></div>
-    <div id="header"></div>
+    <div id="references" ></div>
+    <div id="yellowsec" class="md:hidden lg:block" ></div>
+    <div id="footer-index" class="md:hidden lg:block"></div>
+
+
 </div>
 <script src="../src/main.js"></script>
 <script>
   loadComponent('header', 'sections/header.html');
-  loadComponent('footer', 'sections/footer.html');
+  loadComponent('references', 'sections/references.html');
+  loadComponent("yellowsec", "sections/yellowsec.html");
+  loadComponent('footer-index', 'sections/footer.html');
+  
 </script>
 
