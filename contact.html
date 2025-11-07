@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <script>
+        const loadComponents = (id, url) => {
+            return fetch(url)
+                .then((response) => response.text())
+                .then((html) => {
+                    document.getElementById(id).innerHTML = html;
+                });
+        }
+
+
+        window.onload = () => {
+            loadComponents('imprint', './sections/imprint.html')
+                .then(() => populateContactData());
+        }
+    </script>
+
+    <div id="imprint"></div>
+</body>
+<script  src="./js/contact.js"></script>
+
+</html>
