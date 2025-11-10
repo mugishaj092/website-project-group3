@@ -7,7 +7,7 @@
     <link href="/src/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
 
     <script>
         const loadComponents = (id, url) => {
@@ -21,17 +21,42 @@
 
         window.onload = () => {
             loadComponents('header2', './sections/header2.html')
+                .then(() => menuBar());
             loadComponents('imprint', './sections/imprint.html')
             loadComponents('footer2', './sections/footer2.html')
-                .then(() => populateContactData());
+            .then(() => populateContactData());
         }
+        const menuBar = () => {
+            const menuToggle = document.getElementById("menuToggle");
+            const menu = document.getElementById("menu");
+            const hamburger = document.getElementById("hamburger");
+            const closeIcon = document.getElementById("closeIcon");
+
+            if (menuToggle) {
+                menuToggle.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                    hamburger.classList.toggle("hidden");
+                    closeIcon.classList.toggle("hidden");
+                });
+            }
+        };
+
+        const moveShape = () => {
+            const shapes = document.getElementById("shapes");
+            const menuToggle2 = document.getElementById("menuToggle");
+            if (menuToggle2 && shapes) {
+                menuToggle2.addEventListener('click', () => {
+                    shapes.classList.toggle("mt-[250px]");
+                });
+            }
+        };
     </script>
 
-    
+
     <div id="header2"></div>
     <div id="imprint"></div>
     <div id="footer2"></div>
 </body>
-<script  src="./js/contact.js"></script>
+<script src="./public/js/contact.js"></script>
 
 </html>
