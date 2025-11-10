@@ -13,10 +13,10 @@
   <div id="header"></div>
   <div id="hero"></div>
   <div id="about"></div>
-  <div id="references"></div>
-  <div id="yellowsec"></div>
+  <!-- <div id="references"></div> -->
+  <div id="yellowsec1"  class="hidden md:block xl:hidden"></div>
   <div id="contact"></div>
-  <div id="footer"></div>
+  <div id="footer" class="hidden md:block xl:hidden"></div>
 
   <script>
     const loadComponents = (id, url) => {
@@ -35,9 +35,12 @@
       loadComponents('hero', 'sections/hero.html');
       loadComponents('about', 'sections/about.html');
       loadComponents('yellowsec', 'sections/yellowsec.html');
+      loadComponents('yellowsec1', 'sections/yellowsec.html');
       loadComponents('references', 'sections/references.html');
+      loadComponents('references3', 'sections/references.html');
       loadComponents('contact', 'sections/contact.html');
       loadComponents('footer', 'sections/footer.html');
+      loadComponents('footer-index', 'sections/footer.html');
     };
 
     const menuBar = () => {
@@ -67,7 +70,7 @@
   </script>
   <script src="/public/js/references.js"></script>
   <script src="/public/js/contact.js"></script>
-  <!-- <script src="/public/js/main.js"></script> -->
+  
 </body>
 </html>
 
