@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <script>
+        const loadComponents = (id, url) => {
+            return fetch(url)
+                .then((response) => response.text())
+                .then((html) => {
+                    document.getElementById(id).innerHTML = html;
+                });
+        }
+
+
+        window.onload = () => {
+            loadComponents('header2', './sections/header2.html')
+            loadComponents('imprint', './sections/imprint.html')
+            loadComponents('footer2', './sections/footer2.html')
+                .then(() => populateContactData());
+        }
+    </script>
+
+    
+    <div id="header2"></div>
+    <div id="imprint"></div>
+    <div id="footer2"></div>
+</body>
+<script  src="./js/contact.js"></script>
+
+</html>
